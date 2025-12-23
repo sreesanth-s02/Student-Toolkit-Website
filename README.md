@@ -48,42 +48,7 @@ No backend or database is required; everything runs on the client.
 
 ---
 
-## Calculations
 
-### GPA
-
-Grade points (Anna University style):
-
-- O = 10, A+ = 9, A = 8, B+ = 7, B = 6, C = 5, U = 0
-
-Semester GPA:
-
-\[
-\text{GPA} = \frac{\sum (\text{grade point} \times \text{credits})}{\sum \text{credits}}
-\] [web:567][web:570]
-
-### CGPA
-
-CGPA is calculated in the same way but uses **all completed subjects** across semesters.[web:515][web:573]
-
-### Target CGPA
-
-Given:
-
-- \(Gc\): current CGPA  
-- \(Cc\): completed credits  
-- \(Cr\): upcoming credits  
-- \(T\): target CGPA  
-
-Required GPA in upcoming credits:
-
-\[
-\text{Required GPA} = \frac{T \times (Cc + Cr) - Gc \times Cc}{Cr}
-\]
-
-Used in `target.js` to compute the minimum GPA needed to reach your target CGPA.[web:520][web:569]
-
----
 ## Project Structure
 
 .
