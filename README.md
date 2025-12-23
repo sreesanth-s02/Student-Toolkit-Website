@@ -70,7 +70,8 @@ then open http://localhost:8000
 - Mobile‑friendly responsive design and fast static hosting for good Core Web Vitals.[web:603][web:606]
 
 ---
-
+## Hosted Website Link:https://student-toolkit-web.netlify.app/
+---
 ## License
 
 This project is licensed under the **MIT License**.  
