@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Calculator 75 Percent | StudentToolKit</title>
+  <meta name="description" content="Attendance and bunk calculator for engineering students. Maintain minimum 75% attendance and know how many classes you can bunk.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="container navbar-inner">
+    <div class="logo">StudentToolKit</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gpa.html">GPA</a>
+      <a href="cgpa.html">CGPA</a>
+      <a href="attendance.html">Attendance</a>
+      <a href="timetable.html">Timetable</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool">
+  <div class="container tool-inner">
+    <h1>Attendance & Bunk Calculator</h1>
+
+    <div class="form-row">
+      <input type="number" id="total" placeholder="Total Classes" min="0">
+      <input type="number" id="attended" placeholder="Classes Attended" min="0">
+      <input type="number" id="required" placeholder="Required %" value="75" min="1" max="100">
+    </div>
+
+    <button class="btn primary" onclick="calculateAttendance()">Calculate Attendance</button>
+    <p id="output" class="result"></p>
+    <p class="muted">This is only a helper. Always confirm your college's official attendance rules.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 StudentToolKit</p>
+  </div>
+</footer>
+
+<script src="js/attendance.js"></script>
+</body>
+</html>

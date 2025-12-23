@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam Study Timetable Generator | StudentToolKit</title>
+  <meta name="description" content="Generate a smart exam study timetable based on subjects, days to exam and daily study hours, with extra focus on weak subjects.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="container navbar-inner">
+    <div class="logo">StudentToolKit</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gpa.html">GPA</a>
+      <a href="cgpa.html">CGPA</a>
+      <a href="attendance.html">Attendance</a>
+      <a href="timetable.html">Timetable</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool">
+  <div class="container tool-inner">
+    <h1>Study Timetable Generator</h1>
+
+    <p class="muted">Normal subjects get weight 1; weak subjects get weight 2 so they receive more hours.</p>
+
+    <div class="form-row">
+      <textarea id="subjects" placeholder="Enter subjects separated by commas (e.g., Maths, OS, CN)"></textarea>
+    </div>
+
+    <div class="form-row">
+      <textarea id="weakSubjects" placeholder="Enter weak subjects (comma separated), must match names above exactly"></textarea>
+    </div>
+
+    <div class="form-row">
+      <input type="number" id="days" placeholder="Days to Exam" min="1">
+      <input type="number" id="hours" placeholder="Daily Study Hours" min="1" max="16">
+    </div>
+
+    <button class="btn primary" onclick="generateTimetable()">Generate Timetable</button>
+    <div id="timetable" style="margin-top:1.5rem;"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 StudentToolKit</p>
+  </div>
+</footer>
+
+<script src="js/timetable.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anna University R2021 CGPA & GPA Calculator | StudentToolKit</title>
+  <meta name="description" content="Calculate GPA and CGPA online using Anna University R2021 grading and credit system. Free, fast, and made for engineering students.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="container navbar-inner">
+    <div class="logo">StudentToolKit</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="cgpa.html">CGPA</a>
+      <a href="attendance.html">Attendance</a>
+      <a href="timetable.html">Timetable</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool">
+  <div class="container tool-inner">
+    <h1>Anna University GPA Calculator</h1>
+
+    <!-- Dept / Semester / Mode -->
+    <div class="form-row">
+      <select id="department" onchange="onDepartmentChange()">
+        <option value="AIDS">B.Tech AI & DS (R2021)</option>
+        <option value="CSE">B.Tech CSE (R2021)</option>
+        <option value="ECE">B.Tech ECE (R2021)</option>
+        <option value="EEE">B.Tech EEE (R2021)</option>
+        <option value="MECH">B.Tech MECH (R2021)</option>
+        <option value="CIVIL">B.Tech CIVIL (R2021)</option>
+        <option value="IT">B.Tech IT (R2021)</option>
+        <option value="OTHER">Other Courses (R2021)</option>
+      </select>
+
+      <select id="semester" onchange="loadSubjectsForSemester()">
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+        <option value="5">Semester 5</option>
+        <option value="6">Semester 6</option>
+        <option value="7">Semester 7</option>
+        <option value="8">Semester 8</option>
+      </select>
+
+
+      <button class="btn primary" style="margin-top:1rem;" onclick="calculateGPA()">
+        Calculate GPA
+    </button>
+    <p id="gpaResult" class="result"></p> 
+  </div>
+  
+
+    <p class="muted">
+      Subject codes and credits are based on Anna University Regulation 2021 curriculum. Always double‑check with your syllabus.
+    </p>
+
+    <!-- Add subject row -->
+    <div class="form-row" style="margin-top:1rem;">
+      <select id="subjectSelect">
+        <!-- filled by JS from syllabus mapping -->
+      </select>
+
+      <select id="gradeSelect">
+        <option value="O">O</option>
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="U">U / RA</option>
+      </select>
+
+      <button class="btn primary small" onclick="addSelectedSubject()">Add Subject</button>
+      <button class="btn outline small" onclick="clearSubjects()">Clear All</button>
+    </div>
+
+    <!-- Manual subject (optional) -->
+    <p class="muted">
+      Need a custom subject (elective / other dept)? Enter manually:
+    </p>
+    <div class="form-row">
+      <input type="text" id="manualName" placeholder="Custom Subject Name">
+      <input type="number" id="manualCredits" placeholder="Credits" min="0">
+      <select id="manualGrade">
+        <option value="O">O</option>
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="U">U / RA</option>
+      </select>
+      <button class="btn secondary small" onclick="addManualSubject()">Add Custom</button>
+    </div>
+
+    <!-- Subject table -->
+    <table id="subjectTable">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Subject</th>
+          <th>Grade</th>
+          <th>Credits</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <button class="btn primary" style="margin-top:1rem;" onclick="calculateCGPA()">Calculate</button>
+    <p id="cgpaResult" class="result"></p>
+    
+    <p>
+  Want to know your target CGPA for next semester? You can calculate what are the grades needed to reach your target CGPA.<br>
+  <a href="target.html">Click here </a>
+</p>
+
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 StudentToolKit</p>
+  </div>
+</footer>
+
+<script src="js/gpa.js"></script>
+</body>
+</html>
