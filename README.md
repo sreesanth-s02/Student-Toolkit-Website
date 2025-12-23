@@ -48,31 +48,6 @@ No backend or database is required; everything runs on the client.
 
 ---
 
-
-## Project Structure
-
-├── css
-│ └── style.css
-├── img
-│ └── upi-qr.jpeg
-├── js
-│ ├── attendance.js
-│ ├── cgpa.js
-│ ├── gpa.js
-│ ├── target.js
-│ └── timetable.js
-├── about.html
-├── attendance.html
-├── cgpa.html
-├── contact.html
-├── gpa.html
-├── index.html
-├── privacy-policy.html
-├── target.html
-├── terms.html
-└── timetable.html
----
-
 ## Running Locally
 
 1. Clone the repository:
