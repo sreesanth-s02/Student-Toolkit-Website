@@ -51,7 +51,6 @@ No backend or database is required; everything runs on the client.
 
 ## Project Structure
 
-.
 ├── css
 │ └── style.css
 ├── img
@@ -72,8 +71,6 @@ No backend or database is required; everything runs on the client.
 ├── target.html
 ├── terms.html
 └── timetable.html
-
-
 ---
 
 ## Running Locally
@@ -85,7 +82,7 @@ cd Student-Toolkit-Website
 
 2. Open `index.html` directly in your browser **or** run a simple HTTP server:
 
-Python 3
+Python 3: 
 python -m http.server 8000
 
 then open http://localhost:8000
@@ -102,4 +99,4 @@ then open http://localhost:8000
 ## License
 
 This project is licensed under the **MIT License**.  
-See the `LICENSE` file for details.[web:630][web:632]
+See the `LICENSE` file for details.
