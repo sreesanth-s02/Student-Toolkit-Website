@@ -1,5 +1,5 @@
 User-agent: *
 Disallow:
 
-# Optional: when you add a sitemap later
-# Sitemap: https://student-toolkit.netlify.app/sitemap.xml
+#Optional: when you add a sitemap later
+Sitemap: https://student-toolkit-website.netlify.app/sitemap.xml
