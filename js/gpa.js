@@ -566,6 +566,7 @@ function loadSubjectsForSemester() {
 
 
 // Add subject from mapping
+// Add subject from mapping
 function addSelectedSubject() {
   const dept = document.getElementById("department").value;
   const sem = document.getElementById("semester").value;
@@ -586,6 +587,13 @@ function addSelectedSubject() {
   const selected = list.find(s => s.code === subCode);
   if (!selected) return;
 
+  // 🔴 Duplicate check by subject code
+  const alreadyAdded = subjects.some(s => s.code === selected.code);
+  if (alreadyAdded) {
+    alert("This subject is already added. Please choose a different subject.");
+    return;
+  }
+
   subjects.push({
     code: selected.code,
     name: selected.name,
@@ -597,6 +605,8 @@ function addSelectedSubject() {
 }
 
 
+
+// Add manual subject (for electives etc.)
 // Add manual subject (for electives etc.)
 function addManualSubject() {
   const name = document.getElementById("manualName").value.trim();
@@ -605,6 +615,15 @@ function addManualSubject() {
 
   if (!name || !(credits > 0)) {
     alert("Enter valid custom subject name and credits.");
+    return;
+  }
+
+  // 🔴 Duplicate check by subject name (case-insensitive)
+  const alreadyAdded = subjects.some(
+    s => s.code === "-" && s.name.toLowerCase() === name.toLowerCase()
+  );
+  if (alreadyAdded) {
+    alert("This custom subject is already added. Please use a different name.");
     return;
   }
 
@@ -619,6 +638,7 @@ function addManualSubject() {
   document.getElementById("manualCredits").value = "";
   renderSubjects();
 }
+
 
 function clearSubjects() {
   subjects = [];
@@ -669,7 +689,7 @@ function calculateGPA() {
   const value = weightedSum / totalCredits;
   const rounded = value.toFixed(2);
 
-  const out = document.getElementById("cgpaResult"); // or gpaResult if you rename
+  const out = document.getElementById("gpaResult"); // or gpaResult if you rename
   out.textContent = `Your GPA for this semester is ${rounded}.`;
 }
 
